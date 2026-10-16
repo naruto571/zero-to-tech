@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>旋涡鸣人 · 自我介绍</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: "Microsoft YaHei", "PingFang SC", sans-serif;
+    background: radial-gradient(circle at top, #1a1a2e 0%, #0f0f1a 100%);
+    color: #fff;
+    min-height: 100vh;
+    overflow-x: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px 20px;
+  }
+
+  /* 背景查克拉粒子 */
+  .chakra-bg {
+    position: fixed;
+    inset: 0;
+    z-index: 0;
+    overflow: hidden;
+    pointer-events: none;
+  }
+  .particle {
+    position: absolute;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: #ff8c00;
+    box-shadow: 0 0 12px #ff8c00, 0 0 24px #ff4500;
+    animation: floatUp linear infinite;
+    opacity: 0.7;
+  }
+  @keyframes floatUp {
+    from { transform: translateY(100vh) scale(0.5); opacity: 0; }
+    20%  { opacity: 0.9; }
+    to   { transform: translateY(-10vh) scale(1.2); opacity: 0; }
+  }
+
+  /* 主卡片 */
+  .card {
+    position: relative;
+    z-index: 2;
+    max-width: 780px;
+    width: 100%;
+    background: linear-gradient(145deg, rgba(255,140,0,0.12), rgba(255,69,0,0.05));
+    border: 2px solid rgba(255,140,0,0.4);
+    border-radius: 24px;
+    padding: 45px 40px;
+    box-shadow: 0 0 40px rgba(255,140,0,0.35), inset 0 0 60px rgba(255,140,0,0.06);
+    backdrop-filter: blur(8px);
+    animation: cardIn 1s ease-out;
+  }
+  @keyframes cardIn {
+    from { opacity: 0; transform: translateY(40px) scale(0.96); }
+    to   { opacity: 1; transform: translateY(0) scale(1); }
+  }
+
+  /* 头像 */
+  .avatar-wrap {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+  }
+  .avatar {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    border: 4px solid #ff8c00;
+    box-shadow: 0 0 30px #ff8c00, 0 0 60px rgba(255,69,0,0.6);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 80px;
+    background: radial-gradient(circle, #ffb347, #ff4500);
+    animation: pulse 2.5s ease-in-out infinite;
+  }
+  @keyframes pulse {
+    0%, 100% { box-shadow: 0 0 30px #ff8c00, 0 0 60px rgba(255,69,0,0.6); }
+    50%      { box-shadow: 0 0 50px #ff8c00, 0 0 100px rgba(255,69,0,1); }
+  }
+
+  /* 名字 */
+  h1 {
+    text-align: center;
+    font-size: 2.6rem;
+    letter-spacing: 4px;
+    background: linear-gradient(90deg, #ffd700, #ff8c00, #ff4500);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow: 0 0 30px rgba(255,140,0,0.5);
+    margin-bottom: 8px;
+  }
+  .subtitle {
+    text-align: center;
+    color: #ffb347;
+    font-size: 1rem;
+    letter-spacing: 2px;
+    margin-bottom: 30px;
+    opacity: 0.9;
+  }
+
+  /* 口头禅 */
+  .quote {
+    text-align: center;
+    font-size: 1.15rem;
+    color: #ffe0a3;
+    font-style: italic;
+    margin-bottom: 35px;
+    padding: 14px 20px;
+    border-left: 4px solid #ff8c00;
+    border-right: 4px solid #ff8c00;
+    background: rgba(255,140,0,0.08);
+    border-radius: 8px;
+  }
+
+  /* 信息区块 */
+  .section {
+    margin-bottom: 28px;
+  }
+  .section-title {
+    font-size: 1.2rem;
+    color: #ff8c00;
+    margin-bottom: 12px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    border-bottom: 1px dashed rgba(255,140,0,0.4);
+    padding-bottom: 6px;
+  }
+
+  .info-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    gap: 12px;
+  }
+  .info-item {
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(255,140,0,0.25);
+    border-radius: 10px;
+    padding: 10px 14px;
+    font-size: 0.92rem;
+    transition: all 0.3s;
+  }
+  .info-item:hover {
+    background: rgba(255,140,0,0.15);
+    transform: translateY(-3px);
+    border-color: #ff8c00;
+  }
+  .info-item .label {
+    color: #ffb347;
+    font-size: 0.8rem;
+    display: block;
+    margin-bottom: 3px;
+  }
+
+  /* 技能条 */
+  .skill {
+    margin-bottom: 14px;
+  }
+  .skill-name {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.9rem;
+    margin-bottom: 5px;
+    color: #ffe0a3;
+  }
+  .bar {
+    height: 10px;
+    background: rgba(255,255,255,0.08);
+    border-radius: 6px;
+    overflow: hidden;
+  }
+  .bar-fill {
+    height: 100%;
+    border-radius: 6px;
+    background: linear-gradient(90deg, #ff4500, #ff8c00, #ffd700);
+    box-shadow: 0 0 12px #ff8c00;
+    width: 0;
+    animation: fillBar 1.6s ease-out forwards;
+  }
+  @keyframes fillBar {
+    to { width: var(--w); }
+  }
+
+  /* 忍术标签 */
+  .tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+  .tag {
+    padding: 6px 14px;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    background: rgba(255,140,0,0.15);
+    border: 1px solid rgba(255,140,0,0.5);
+    color: #ffb347;
+    transition: all 0.3s;
+    cursor: default;
+  }
+  .tag:hover {
+    background: #ff8c00;
+    color: #1a1a2e;
+    transform: scale(1.1) rotate(-2deg);
+    box-shadow: 0 0 18px #ff8c00;
+  }
+
+  /* 底部 */
+  .footer {
+    text-align: center;
+    margin-top: 35px;
+    font-size: 1rem;
+    color: #ffd700;
+    letter-spacing: 2px;
+  }
+  .footer .big {
+    display: block;
+    font-size: 1.4rem;
+    margin-top: 8px;
+    font-weight: bold;
+    background: linear-gradient(90deg, #ff4500, #ffd700);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: glow 2s ease-in-out infinite alternate;
+  }
+  @keyframes glow {
+    from { filter: drop-shadow(0 0 4px #ff8c00); }
+    to   { filter: drop-shadow(0 0 16px #ff4500); }
+  }
+
+  /* 螺旋丸装饰 */
+  .rasengan {
+    position: absolute;
+    top: -30px;
+    right: -30px;
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background: radial-gradient(circle at 30% 30%, #fff, #4fc3f7 40%, #0288d1 70%, transparent 75%);
+    box-shadow: 0 0 30px #4fc3f7, 0 0 60px #0288d1;
+    animation: spin 3s linear infinite, floatR 3s ease-in-out infinite;
+    opacity: 0.85;
+  }
+  @keyframes spin { to { transform: rotate(360deg); } }
+  @keyframes floatR {
+    0%, 100% { translate: 0 0; }
+    50%      { translate: 0 -12px; }
+  }
+
+  @media (max-width: 560px) {
+    h1 { font-size: 1.9rem; }
+    .card { padding: 30px 22px; }
+    .avatar { width: 110px; height: 110px; font-size: 58px; }
+    .rasengan { width: 56px; height: 56px; top: -18px; right: -18px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- 查克拉粒子背景 -->
+<div class="chakra-bg" id="chakraBg"></div>
+
+<!-- 主卡片 -->
+<div class="card">
+  <div class="rasengan"></div>
+
+  <div class="avatar-wrap">
+    <div class="avatar">🍥</div>
+  </div>
+
+  <h1>旋涡鸣人</h1>
+  <p class="subtitle">うずまきナルト · UZUMAKI NARUTO</p>
+
+  <div class="quote">
+    「我绝对不会收回自己说过的话，这就是我的忍道！」
+  </div>
+
+  <!-- 基本信息 -->
+  <div class="section">
+    <div class="section-title">📜 基本资料</div>
+    <div class="info-grid">
+      <div class="info-item"><span class="label">忍者等级</span>七代目火影</div>
+      <div class="info-item"><span class="label">所属村落</span>木叶隐村</div>
+      <div class="info-item"><span class="label">生日</span>10月10日</div>
+      <div class="info-item"><span class="label">血型</span>B型</div>
+      <div class="info-item"><span class="label">身高</span>180 cm</div>
+      <div class="info-item"><span class="label">查克拉属性</span>风 · 火 · 土 · 水 · 雷 · 阴 · 阳</div>
+    </div>
+  </div>
+
+  <!-- 能力值 -->
+  <div class="section">
+    <div class="section-title">⚡ 能力值</div>
+    <div class="skill">
+      <div class="skill-name"><span>查克拉量</span><span>100%</span></div>
+      <div class="bar"><div class="bar-fill" style="--w:100%"></div></div>
+    </div>
+    <div class="skill">
+      <div class="skill-name"><span>体术</span><span>85%</span></div>
+      <div class="bar"><div class="bar-fill" style="--w:85%"></div></div>
+    </div>
+    <div class="skill">
+      <div class="skill-name"><span>忍术</span><span>95%</span></div>
+      <div class="bar"><div class="bar-fill" style="--w:95%"></div></div>
+    </div>
+    <div class="skill">
+      <div class="skill-name"><span>意志力</span><span>100%</span></div>
+      <div class="bar"><div class="bar-fill" style="--w:100%"></div></div>
+    </div>
+    <div class="skill">
+      <div class="skill-name"><span>拉面战斗力</span><span>999%</span></div>
+      <div class="bar"><div class="bar-fill" style="--w:100%"></div></div>
+    </div>
+  </div>
+
+  <!-- 擅长忍术 -->
+  <div class="section">
+    <div class="section-title">🌀 擅长忍术</div>
+    <div class="tags">
+      <span class="tag">螺旋丸</span>
+      <span class="tag">影分身之术</span>
+      <span class="tag">通灵之术</span>
+      <span class="tag">多重影分身</span>
+      <span class="tag">大玉螺旋丸</span>
+      <span class="tag">仙术</span>
+      <span class="tag">九尾查克拉模式</span>
+      <span class="tag">六道仙人模式</span>
+      <span class="tag">色诱之术</span>
+      <span class="tag">嘴遁 · 究极奥义</span>
+    </div>
+  </div>
+
+  <!-- 梦想 -->
+  <div class="section">
+    <div class="section-title">🔥 我的梦想</div>
+    <p style="line-height:1.9; color:#ffe0a3; font-size:0.95rem;">
+      从小被村民疏远，但我从未放弃。我要成为火影，让所有人都认可我！<br>
+      我要保护木叶村，保护我的同伴，保护这个和平的时代。<br>
+      <strong style="color:#ffd700;">说到做到，这就是我的忍道！</strong>
+    </p>
+  </div>
+
+  <div class="footer">
+    我是要成为火影的男人！
+    <span class="big">だってばよ！</span>
+  </div>
+</div>
+
+<script>
+  // 生成查克拉粒子
+  const bg = document.getElementById('chakraBg');
+  const colors = ['#ff8c00', '#ff4500', '#ffd700', '#4fc3f7'];
+  for (let i = 0; i < 40; i++) {
+    const p = document.createElement('div');
+    p.className = 'particle';
+    p.style.left = Math.random() * 100 + '%';
+    p.style.animationDuration = (6 + Math.random() * 8) + 's';
+    p.style.animationDelay = (Math.random() * 8) + 's';
+    const c = colors[Math.floor(Math.random() * colors.length)];
+    p.style.background = c;
+    p.style.boxShadow = `0 0 12px ${c}, 0 0 24px ${c}`;
+    const size = 3 + Math.random() * 6;
+    p.style.width = size + 'px';
+    p.style.height = size + 'px';
+    bg.appendChild(p);
+  }
+</script>
+
+</body>
+</html>
