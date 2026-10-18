@@ -1,11 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>¼òµ¥¿¨Æ¬ ¡¤ Ğ¡×÷Æ·</title>
+    <title>ï¿½òµ¥¿ï¿½Æ¬ ï¿½ï¿½ Ğ¡ï¿½ï¿½Æ·</title>
     <style>
-        /* ¸É¾»µÄÈ«¾ÖÑùÊ½ ¡ª ÈáºÍ¡¢ÏÖ´ú¡¢Ò×¶Á */
+        /* ï¿½É¾ï¿½ï¿½ï¿½È«ï¿½ï¿½ï¿½ï¿½Ê½ ï¿½ï¿½ ï¿½ï¿½Í¡ï¿½ï¿½Ö´ï¿½ï¿½ï¿½ï¿½×¶ï¿½ */
         * {
             margin: 0;
             padding: 0;
@@ -32,7 +33,7 @@
             width: 100%;
             border-radius: 2.5rem;
             padding: 2.5rem 2rem;
-            box-shadow: 
+            box-shadow:
                 0 25px 40px -12px rgba(0, 20, 30, 0.25),
                 0 8px 20px -8px rgba(0, 0, 0, 0.15),
                 inset 0 0 0 1px rgba(255, 255, 255, 0.6);
@@ -41,13 +42,13 @@
 
         .card:hover {
             transform: translateY(-4px);
-            box-shadow: 
+            box-shadow:
                 0 35px 50px -14px rgba(0, 20, 30, 0.3),
                 0 12px 28px -10px rgba(0, 0, 0, 0.2),
                 inset 0 0 0 1px rgba(255, 255, 255, 0.8);
         }
 
-        /* ×°ÊÎĞÔĞ¡ÔªËØ ¡ª Ôö¼ÓÊÓ¾õÈ¤Î¶ */
+        /* ×°ï¿½ï¿½ï¿½ï¿½Ğ¡Ôªï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ó¾ï¿½È¤Î¶ */
         .badge {
             display: inline-block;
             background: #d0e2ff;
@@ -89,14 +90,37 @@
         }
 
         @keyframes wave {
-            0% { transform: rotate(0deg); }
-            10% { transform: rotate(14deg); }
-            20% { transform: rotate(-8deg); }
-            30% { transform: rotate(14deg); }
-            40% { transform: rotate(-4deg); }
-            50% { transform: rotate(10deg); }
-            60% { transform: rotate(0deg); }
-            100% { transform: rotate(0deg); }
+            0% {
+                transform: rotate(0deg);
+            }
+
+            10% {
+                transform: rotate(14deg);
+            }
+
+            20% {
+                transform: rotate(-8deg);
+            }
+
+            30% {
+                transform: rotate(14deg);
+            }
+
+            40% {
+                transform: rotate(-4deg);
+            }
+
+            50% {
+                transform: rotate(10deg);
+            }
+
+            60% {
+                transform: rotate(0deg);
+            }
+
+            100% {
+                transform: rotate(0deg);
+            }
         }
 
         p {
@@ -115,7 +139,7 @@
             white-space: nowrap;
         }
 
-        /* °´Å¥ÇøÓò ¡ª ÇåË¬¡¢½»»¥ÓÑºÃ */
+        /* ï¿½ï¿½Å¥ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½Ë¬ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ñºï¿½ */
         .actions {
             display: flex;
             flex-wrap: wrap;
@@ -185,7 +209,7 @@
             background: rgba(29, 78, 137, 0.15);
         }
 
-        /* ·Ö¸ôÏß + Ğ¡½Å×¢ */
+        /* ï¿½Ö¸ï¿½ï¿½ï¿½ + Ğ¡ï¿½ï¿½×¢ */
         .footnote {
             margin-top: 2.2rem;
             padding-top: 1.2rem;
@@ -218,91 +242,114 @@
             border-radius: 20px;
         }
 
-        /* ÏìÓ¦Ê½Î¢µ÷ */
+        /* ï¿½ï¿½Ó¦Ê½Î¢ï¿½ï¿½ */
         @media (max-width: 480px) {
-            body { padding: 0.8rem; }
-            .card { padding: 1.8rem 1.4rem; border-radius: 2rem; }
-            h1 { font-size: 1.9rem; }
-            p { font-size: 1rem; }
-            .btn-primary, .btn-secondary {
+            body {
+                padding: 0.8rem;
+            }
+
+            .card {
+                padding: 1.8rem 1.4rem;
+                border-radius: 2rem;
+            }
+
+            h1 {
+                font-size: 1.9rem;
+            }
+
+            p {
+                font-size: 1rem;
+            }
+
+            .btn-primary,
+            .btn-secondary {
                 padding: 0.8rem 1.4rem;
                 font-size: 0.95rem;
                 width: 100%;
                 justify-content: center;
             }
-            .actions { flex-direction: column; }
-            .footnote { flex-direction: column; align-items: flex-start; }
+
+            .actions {
+                flex-direction: column;
+            }
+
+            .footnote {
+                flex-direction: column;
+                align-items: flex-start;
+            }
         }
     </style>
 </head>
+
 <body>
 
     <div class="card">
-        <!-- Î¢Ğ¡×°ÊÎ±êÇ© -->
-        <div class="badge">? ¼òµ¥ ¡¤ ¸É¾» ¡¤ ÏÖ´ú</div>
+        <!-- Î¢Ğ¡×°ï¿½Î±ï¿½Ç© -->
+        <div class="badge">? ï¿½ï¿½ ï¿½ï¿½ ï¿½É¾ï¿½ ï¿½ï¿½ ï¿½Ö´ï¿½</div>
 
         <h1>
-            <span>ÄãºÃ£¬ÊÀ½ç</span>
+            <span>ä¸ºä»€ä¹ˆéƒ½æ˜¯ä¹±ç å•Šï¼Ÿ</span>
             <span class="wave">??</span>
         </h1>
 
         <p>
-            ÕâÊÇÒ»¸ö¼òµ¥µÄ HTML ¿¨Æ¬Ò³Ãæ¡£ÀïÃæÓĞÒ»¸ö<strong>±êÌâ</strong>¡¢Ò»¶Î<strong>¼ò½é</strong>£¬
-            »¹ÓĞÁ½¸ö<strong>½»»¥°´Å¥</strong> ¡ª¡ª ËüÃÇÄÜ´¥·¢ä¯ÀÀÆ÷µÄÔ­Éúµ¯´°£¬Ë³±ãÕ¹Ê¾Ò»ÏÂ<span class="highlight">JavaScript</span>µÄĞ¡È¤Î¶¡£
-            ÕûÌå·ç¸ñÇåË¬£¬ÊÊºÏ×÷Îª¸öÈËĞ¡Ò³ÃæµÄÆğµã¡£
+            ï¿½ï¿½ï¿½ï¿½Ò»ï¿½ï¿½ï¿½òµ¥µï¿½ HTML ï¿½ï¿½Æ¬Ò³ï¿½æ¡£ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ò»ï¿½ï¿½<strong>ï¿½ï¿½ï¿½ï¿½</strong>ï¿½ï¿½Ò»ï¿½ï¿½<strong>ï¿½ï¿½ï¿½</strong>ï¿½ï¿½
+            ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½<strong>ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Å¥</strong> ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ü´ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ô­ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ë³ï¿½ï¿½Õ¹Ê¾Ò»ï¿½ï¿½<span
+                class="highlight">JavaScript</span>ï¿½ï¿½Ğ¡È¤Î¶ï¿½ï¿½
+            ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ë¬ï¿½ï¿½ï¿½Êºï¿½ï¿½ï¿½Îªï¿½ï¿½ï¿½ï¿½Ğ¡Ò³ï¿½ï¿½ï¿½ï¿½ï¿½ã¡£
         </p>
 
-        <!-- ½»»¥°´Å¥×é£¬µã»÷µ¯³ö¼òµ¥ÏûÏ¢ -->
+        <!-- ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Å¥ï¿½é£¬ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ï¢ -->
         <div class="actions">
             <button class="btn-primary" id="greetBtn">
-                ? µãÎÒÎÊºò
+                ? ï¿½ï¿½ï¿½ï¿½ï¿½Êºï¿½
             </button>
             <button class="btn-secondary" id="timeBtn">
-                ?? ÏÔÊ¾µ±Ç°Ê±¼ä
+                ?? ï¿½ï¿½Ê¾ï¿½ï¿½Ç°Ê±ï¿½ï¿½
             </button>
         </div>
 
-        <!-- µ×²¿µã×ºÓë¶¯Ì¬Ê±¼äÏÔÊ¾Çø£¨µã»÷°´Å¥ºó¸üĞÂ£© -->
+        <!-- ï¿½×²ï¿½ï¿½ï¿½×ºï¿½ë¶¯Ì¬Ê±ï¿½ï¿½ï¿½ï¿½Ê¾ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Å¥ï¿½ï¿½ï¿½ï¿½Â£ï¿½ -->
         <div class="footnote">
             <div class="dot-group">
                 <span class="dot active"></span>
                 <span class="dot"></span>
                 <span class="dot"></span>
             </div>
-            <span id="messagePreview">µã»÷°´Å¥ÊÔÊÔ¿´ ?</span>
+            <span id="messagePreview">ï¿½ï¿½ï¿½ï¿½ï¿½Å¥ï¿½ï¿½ï¿½Ô¿ï¿½ ?</span>
         </div>
     </div>
 
     <script>
-        (function() {
-            // »ñÈ¡ÔªËØ
+        (function () {
+            // ï¿½ï¿½È¡Ôªï¿½ï¿½
             const greetBtn = document.getElementById('greetBtn');
             const timeBtn = document.getElementById('timeBtn');
             const messagePreview = document.getElementById('messagePreview');
 
-            // ÎÊºò°´Å¥ ¡ª¡ª µ¯³öÎÊºòÓï²¢¸üĞÂÔ¤ÀÀÎÄ×Ö
-            greetBtn.addEventListener('click', function() {
+            // ï¿½Êºï¿½Å¥ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Êºï¿½ï¿½ï²¢ï¿½ï¿½ï¿½ï¿½Ô¤ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+            greetBtn.addEventListener('click', function () {
                 const greetings = [
-                    'ÄãºÃÑ½£¡?? ½ñÌì¹ıµÃ¿ªĞÄÂğ£¿',
-                    'àË£¡ºÜ¸ßĞË¼ûµ½Äã ??',
-                    'Hello! Ô¸ÄãÓĞ¸öÃÀºÃµÄÒ»Ìì ??',
-                    'ºÙ¡« Ğ»Ğ»ÄãµÄµã»÷ ?',
-                    'ÄãºÃ£¬ÊÀ½ç£¡?? ¼òµ¥Ò²ºÜÃÀºÃ¡£'
+                    'ï¿½ï¿½ï¿½Ñ½ï¿½ï¿½?? ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ã¿ï¿½ï¿½ï¿½ï¿½ï¿½',
+                    'ï¿½Ë£ï¿½ï¿½Ü¸ï¿½ï¿½Ë¼ï¿½ï¿½ï¿½ï¿½ï¿½ ??',
+                    'Hello! Ô¸ï¿½ï¿½ï¿½Ğ¸ï¿½ï¿½ï¿½ï¿½Ãµï¿½Ò»ï¿½ï¿½ ??',
+                    'ï¿½Ù¡ï¿½ Ğ»Ğ»ï¿½ï¿½Äµï¿½ï¿½ ?',
+                    'ï¿½ï¿½Ã£ï¿½ï¿½ï¿½ï¿½ç£¡?? ï¿½ï¿½Ò²ï¿½ï¿½ï¿½ï¿½ï¿½Ã¡ï¿½'
                 ];
-                // Ëæ»úÑ¡Ò»¾äÎÊºòÓï
+                // ï¿½ï¿½ï¿½Ñ¡Ò»ï¿½ï¿½ï¿½Êºï¿½ï¿½ï¿½
                 const randomIndex = Math.floor(Math.random() * greetings.length);
                 const selectedGreeting = greetings[randomIndex];
 
-                // µ¯´° (¼òµ¥µÄä¯ÀÀÆ÷½»»¥)
+                // ï¿½ï¿½ï¿½ï¿½ (ï¿½òµ¥µï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½)
                 alert(selectedGreeting);
-                // Í¬Ê±¸üĞÂĞ¡Ô¤ÀÀÇøÓò
-                messagePreview.textContent = '?? ¸Õ¸ÕËµ£º' + selectedGreeting;
+                // Í¬Ê±ï¿½ï¿½ï¿½ï¿½Ğ¡Ô¤ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+                messagePreview.textContent = '?? ï¿½Õ¸ï¿½Ëµï¿½ï¿½' + selectedGreeting;
             });
 
-            // Ê±¼ä°´Å¥ ¡ª¡ª ÏÔÊ¾µ±Ç°Ê±¼ä£¬²¢Í¬²½µ½Ô¤ÀÀºÍµ¯´°
-            timeBtn.addEventListener('click', function() {
+            // Ê±ï¿½ä°´Å¥ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Ê¾ï¿½ï¿½Ç°Ê±ï¿½ä£¬ï¿½ï¿½Í¬ï¿½ï¿½ï¿½ï¿½Ô¤ï¿½ï¿½ï¿½Íµï¿½ï¿½ï¿½
+            timeBtn.addEventListener('click', function () {
                 const now = new Date();
-                // ¸ñÊ½»¯Ê±¼ä: Äê-ÔÂ-ÈÕ Ê±:·Ö:Ãë
+                // ï¿½ï¿½Ê½ï¿½ï¿½Ê±ï¿½ï¿½: ï¿½ï¿½-ï¿½ï¿½-ï¿½ï¿½ Ê±:ï¿½ï¿½:ï¿½ï¿½
                 const year = now.getFullYear();
                 const month = String(now.getMonth() + 1).padStart(2, '0');
                 const day = String(now.getDate()).padStart(2, '0');
@@ -311,15 +358,16 @@
                 const seconds = String(now.getSeconds()).padStart(2, '0');
 
                 const timeString = `${year}-${month}-${day} ${hours}:${minutes}:${seconds}`;
-                const displayMessage = `?? ÏÖÔÚÊÇ ${timeString}`;
+                const displayMessage = `?? ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ${timeString}`;
 
                 alert(displayMessage);
                 messagePreview.textContent = displayMessage;
             });
 
-            // ¿ÉÑ¡£º¸ø¿¨Æ¬µ×²¿Ô¤ÀÀ¼ÓÉÏÒ»µã³õÊ¼ÌáÊ¾£¨ÒÑ´æÔÚ£©
-            // µ«Èç¹ûÄãµã»÷ÈÎÒâ°´Å¥£¬Ô¤ÀÀÇøÎÄ×Ö»á±ä»¯
+            // ï¿½ï¿½Ñ¡ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Æ¬ï¿½×²ï¿½Ô¤ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ò»ï¿½ï¿½ï¿½Ê¼ï¿½ï¿½Ê¾ï¿½ï¿½ï¿½Ñ´ï¿½ï¿½Ú£ï¿½
+            // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½â°´Å¥ï¿½ï¿½Ô¤ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ö»ï¿½ä»¯
         })();
     </script>
 </body>
+
 </html>
