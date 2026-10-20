@@ -10,7 +10,7 @@ export const home = {
   heroSubtitle: "项目，创意，灵感，心得，我的作品",
   featuredWork: {
     kicker: "作品",
-    title: "文字实验室i",
+    title: "文字实验室",
     copy: "拼音和情绪，挖掘中文里的细节",
     linkLabel: "打开作品",
   },
@@ -21,6 +21,6 @@ export const home = {
 };
 
 export const textLab = {
-  heroTitle: "文字实验室i",
+  heroTitle: "文字实验室",
   heroSubtitle: "拼音和情绪，挖掘中文里的细节",
 };
