@@ -52,6 +52,10 @@ profile = {
 class AnalyzeRequest(BaseModel):
     text:str
 
+@app.get("/api/profile")
+def get_profile():
+    return profile
+
 def score_label(a):
     if a>=0.6 :
       return "偏积极"
@@ -79,3 +83,4 @@ def analyze(req: AnalyzeRequest, request: Request, response: Response):
 def history(request: Request, response: Response, limit: int = 10):
     sid = get_session_id(request, response)
     return get_history(sid, limit)               # 只回这个会话自己的
+
